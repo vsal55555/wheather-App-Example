@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="wheather_App_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-5l-5Of">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDF-Y5-m3e">
+                                <rect key="frame" x="0.0" y="181" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORz-ZZ-Oi1">
+                                <rect key="frame" x="0.0" y="227" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtV-Ud-NVB">
+                                <rect key="frame" x="0.0" y="319" width="375" height="30"/>
+                                <state key="normal" title="Set City"/>
+                                <connections>
+                                    <action selector="setCityTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3gp-Xi-QHb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l53-OE-39v">
+                                <rect key="frame" x="0.0" y="77" width="375" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="l53-OE-39v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="2ia-eA-7Pd"/>
+                            <constraint firstItem="l53-OE-39v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A8e-yJ-y1h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ORz-ZZ-Oi1" secondAttribute="trailing" id="Ctg-QT-Ce3"/>
+                            <constraint firstItem="ORz-ZZ-Oi1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HUH-2n-Bft"/>
+                            <constraint firstItem="MDF-Y5-m3e" firstAttribute="top" secondItem="l53-OE-39v" secondAttribute="bottom" constant="37" id="HZQ-20-ute"/>
+                            <constraint firstItem="ORz-ZZ-Oi1" firstAttribute="top" secondItem="MDF-Y5-m3e" secondAttribute="bottom" constant="25.5" id="HwV-il-zFD"/>
+                            <constraint firstItem="MDF-Y5-m3e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J17-j2-9in"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l53-OE-39v" secondAttribute="trailing" id="Qgm-dG-B82"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Kt-5l-5Of" secondAttribute="trailing" constant="16" id="UjQ-oc-y9G"/>
+                            <constraint firstItem="7Kt-5l-5Of" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zdy-a6-Uti"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Kt-5l-5Of" secondAttribute="bottom" constant="20" id="a7q-gT-64E"/>
+                            <constraint firstItem="OtV-Ud-NVB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cL0-fB-f2i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OtV-Ud-NVB" secondAttribute="trailing" id="gia-Am-uhr"/>
+                            <constraint firstItem="7Kt-5l-5Of" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qWx-eK-CaT"/>
+                            <constraint firstItem="OtV-Ud-NVB" firstAttribute="top" secondItem="ORz-ZZ-Oi1" secondAttribute="bottom" constant="71.5" id="qwC-6Q-H09"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MDF-Y5-m3e" secondAttribute="trailing" id="yRo-db-NMw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="ORz-ZZ-Oi1" id="YAq-Au-sjq"/>
+                        <outlet property="descriptionLabel" destination="MDF-Y5-m3e" id="2UO-hG-uTF"/>
+                        <outlet property="iconimage" destination="7Kt-5l-5Of" id="ANt-2p-RV1"/>
+                        <outlet property="tempLabel" destination="l53-OE-39v" id="vo2-vD-dsC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="124" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
